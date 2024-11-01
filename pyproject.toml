@@ -1,0 +1,37 @@
+[project]
+name = "PyNodalDecomposition"
+version = "0.1.0"
+description = "Decompose DNA into unsupervised segments to study the apoptosis"
+dependencies = [
+    "numpy",
+    "opencv-python-headless",
+    "pandas",
+    "matplotlib",
+    "scikit-image",
+    "scipy",
+    "tqdm",
+    "networkx",
+    "torch",
+    "torch_geometric",
+    "glasbey",
+    "bm3d"
+]
+readme = "README.md"
+
+
+[project.optional-dependencies]
+dev = ["black", "ruff", "pre-commit"]
+
+notebook = ["ipykernel", "matplotlib"]
+
+[tool.black]
+line-length = 120
+
+[tool.ruff]
+line-length = 120
+select = ["E", "F", "I", "RUF", "TCH"]
+fixable = ["I", "RUF100", "TCH"]
+fix = true
+
+[tool.ruff.isort]
+known-first-party = ["drgnet"]
